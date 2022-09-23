@@ -9,6 +9,9 @@
 
 
 # Required Modules
+import yfinance              as yf
+import pykrx                 as pk
+import FinanceDataReader     as fdr
 import requests
 import json                        # JSON Parser
 import xml.etree.ElementTree as ET # XML Parser                     
@@ -38,6 +41,14 @@ def request_data_to_api(serviceUrl:str, queryParams:dict):
     else:
         print(f"Fail: {serviceUrl[4:]}")
         return None
+
+def get_world_index(idxNm:str, startDt:str, endDt:str):
+    
+    if idxNm not in WORLD_INDEX_TICKERS:
+        print(f"Fail: Invalid index name {idxNm}")
+        return None
+
+    return fdr.DataReader(idxNm, startDt, endDt)
 
 def get_krx_series_daily_price(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
     """
@@ -1012,8 +1023,8 @@ def get_krx_listed_info(serviceKey:str, pageNo=1, numOfRows=1, resultType="json"
     [Returns]
     item : 한국 주식시장에 상장된 종목들의 기본정보 (dict)
         basDt     (str) : YYYYMMDD, 조회의 기준일, 통상 거래일
-        shortIsin (str) : 종목 코드보다 짧으면서 유일성이 보장되는 코드
-        srtnCd    (str) : 현선물 통합상품의 종목 코드(12자리)
+        srtnCd    (str) : 종목 코드보다 짧으면서 유일성이 보장되는 코드
+        isinCd    (str) : 국제 채권 식별 번호. 유가증권(채권)의 국제인증 고유번호
         mrktCtg   (str) : 시장 구분 (KOSPI/KOSDAQ/KONEX 등)
         itmsNm    (str) : 종목의 명칭
         crno      (str) : 종목의 법인등록번호
