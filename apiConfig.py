@@ -69,3 +69,23 @@ ALL_STOCKS_KR = KOSPI_ITEMS + KOSDAQ_ITEMS + KONEX_ITEMS
 
 # The number of Maximum Corporations in Korea
 ALL_CORPS = 160000
+
+# Tickers of World Indexes
+WORLD_INDEX_TICKERS = ['DJI',      # Dow Jones (US)
+                       'IXIC',     # NASDAQ (US)
+                       'US500',    # S&P 500 (US)
+                       'VIX',      # S&P 500 VIX (US)
+                       'KS11',     # KOSPI (Korea)
+                       'KQ11',     # KOSDAQ (Korea)
+                       'KS50',     # KOSPI 50 (Korea)
+                       'KS100',    # KOSPI 100 (Korea)
+                       'KRX100',   # KRX 100 (Korea)
+                       'KS200',    # KOSPI 200 (Korea)
+                       'JP225',    # NIKKEI 225 Futures (Japan)
+                       'STOXX50E', # Euro Stoxx 50  (Europe)
+                       'CSI300',	  # CSI 300        (China)
+                       'HSI',	  # Hang Seng (Hong Kong)
+                       'FTSE',	  # FTSE (England)
+                       'DAX',	  # DAX 30 (Germany)
+                       'CAC'	      # CAC 40 (France)
+]
