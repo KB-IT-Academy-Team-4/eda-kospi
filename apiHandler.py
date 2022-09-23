@@ -209,6 +209,538 @@ def get_derivative_index_daily_price(serviceKey:str, basDd:str=PREVIOUS_BUSINESS
     # Request
     return request_data_to_api(URL_BOND_INDEX_DAILY_PRICE, query_params)
 
+def get_kospi_daily_trading(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
+    """
+    유가증권 일별매매정보 검색 결과를 반환한다.
+    * 유가증권 일별매매정보 (http://openapi.krx.co.kr/contents/OPP/USES/service/OPPUSES002_S2.cmd?BO_ID=JvJFzlAENzZlPBDNGAWC)
+        
+    [Parameters]
+    serviceKey (str) : 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키 (Mandatory) 
+    basDd      (str) : 기준일자 (Default: YESTERDAY; 이전 영업일)
+
+    [Returns]
+    item : 유가증권 일별매매정보 (list of dict)
+        BAS_DD        (str) : 기준일자 (YYYYMMDD)
+        ISU_CD        (str) : 종목코드	
+        ISU_NM        (str) : 종목명	
+        MKT_NM        (str) : 시장구분	
+        SECT_TP_NM    (str) : 소속부	
+        TDD_CLSPRC    (str) : 종가	
+        CMPPREVDD_PRC (str) : 대비	
+        FLUC_RT       (str) : 등락률	
+        TDD_OPNPRC    (str) : 시가	
+        TDD_HGPRC     (str) : 고가	
+        TDD_LWPRC	  (str) : 저가
+        ACC_TRDVOL    (str) : 거래량
+        ACC_TRDVAL    (str) : 거래대금
+        MKTCAP        (str) : 시가총액
+        LIST_SHRS     (str) : 상장주식수
+    """
+
+    # Parameter Setting
+    query_params = {
+        "AUTH_KEY" : serviceKey, # 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키
+        "basDd"     : basDd,     # 기준일자
+    }
+
+    # Request
+    return request_data_to_api(URL_KOSPI_DAILY_TRADING, query_params)
+
+def get_kosdaq_daily_trading(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
+    """
+    코스닥 일별매매정보 검색 결과를 반환한다.
+    * 코스닥 일별매매정보 (http://openapi.krx.co.kr/contents/OPP/USES/service/OPPUSES002_S2.cmd?BO_ID=hZjGpkllgCBCWqeTsYFj)
+        
+    [Parameters]
+    serviceKey (str) : 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키 (Mandatory) 
+    basDd      (str) : 기준일자 (Default: YESTERDAY; 이전 영업일)
+
+    [Returns]
+    item : 코스닥 일별매매정보 (list of dict)
+        BAS_DD        (str) : 기준일자 (YYYYMMDD)
+        ISU_CD        (str) : 종목코드	
+        ISU_NM        (str) : 종목명	
+        MKT_NM        (str) : 시장구분	
+        SECT_TP_NM    (str) : 소속부	
+        TDD_CLSPRC    (str) : 종가	
+        CMPPREVDD_PRC (str) : 대비	
+        FLUC_RT       (str) : 등락률	
+        TDD_OPNPRC    (str) : 시가	
+        TDD_HGPRC     (str) : 고가	
+        TDD_LWPRC	  (str) : 저가
+        ACC_TRDVOL    (str) : 거래량
+        ACC_TRDVAL    (str) : 거래대금
+        MKTCAP        (str) : 시가총액
+        LIST_SHRS     (str) : 상장주식수
+    """
+
+    # Parameter Setting
+    query_params = {
+        "AUTH_KEY" : serviceKey, # 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키
+        "basDd"     : basDd,     # 기준일자
+    }
+
+    # Request
+    return request_data_to_api(URL_KOSDAQ_DAILY_TRADING, query_params)
+
+def get_konex_daily_trading(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
+    """
+    코넥스 일별매매정보 검색 결과를 반환한다.
+    * 코넥스 일별매매정보 (http://openapi.krx.co.kr/contents/OPP/USES/service/OPPUSES002_S2.cmd?BO_ID=hZjGpkllgCBCWqeTsYFj)
+        
+    [Parameters]
+    serviceKey (str) : 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키 (Mandatory) 
+    basDd      (str) : 기준일자 (Default: YESTERDAY; 이전 영업일)
+
+    [Returns]
+    item : 코넥스 일별매매정보 (list of dict)
+        BAS_DD        (str) : 기준일자 (YYYYMMDD)
+        ISU_CD        (str) : 종목코드	
+        ISU_NM        (str) : 종목명	
+        MKT_NM        (str) : 시장구분	
+        SECT_TP_NM    (str) : 소속부	
+        TDD_CLSPRC    (str) : 종가	
+        CMPPREVDD_PRC (str) : 대비	
+        FLUC_RT       (str) : 등락률	
+        TDD_OPNPRC    (str) : 시가	
+        TDD_HGPRC     (str) : 고가	
+        TDD_LWPRC	  (str) : 저가
+        ACC_TRDVOL    (str) : 거래량
+        ACC_TRDVAL    (str) : 거래대금
+        MKTCAP        (str) : 시가총액
+        LIST_SHRS     (str) : 상장주식수
+    """
+
+    # Parameter Setting
+    query_params = {
+        "AUTH_KEY" : serviceKey, # 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키
+        "basDd"     : basDd,     # 기준일자
+    }
+
+    # Request
+    return request_data_to_api(URL_KONEX_DAILY_TRADING, query_params)
+
+def get_sw_daily_trading(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
+    """
+    신주인수권증권 일별매매정보 검색 결과를 반환한다.
+    * 신주인수권증권 (http://openapi.krx.co.kr/contents/OPP/USES/service/OPPUSES002_S2.cmd?BO_ID=erXKnEAzTqcGnkcoSdGA)
+        
+    [Parameters]
+    serviceKey (str) : 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키 (Mandatory) 
+    basDd      (str) : 기준일자 (Default: YESTERDAY; 이전 영업일)
+
+    [Returns]
+    item : 신주인수권증권 (list of dict)
+        BAS_DD               (str) : 기준일자 (YYYYMMDD)
+        MKT_NM               (str) : 시장구분	
+        ISU_CD               (str) : 종목코드	
+        ISU_NM               (str) : 종목명	
+        TDD_CLSPRC	         (str) : 종가	
+        CMPPREVDD_PRC        (str) : 대비	
+        FLUC_RT              (str) : 등락률	
+        TDD_OPNPRC           (str) : 시가	
+        TDD_HGPRC            (str) : 고가	
+        TDD_LWPRC            (str) : 저가	
+        ACC_TRDVOL		     (str) : 거래량
+        ACC_TRDVAL	         (str) : 거래대금
+        MKTCAP               (str) : 시가총액
+        LIST_SHRS            (str) : 상장증권수
+        EXER_PRC             (str) : 행사가격
+        EXST_STRT_DD         (str) : 존속기간_시작일	
+        EXST_END_DD          (str) : 존속기간_종료일
+        TARSTK_ISU_SRT_CD    (str) : 목적주권_종목코드
+        TARSTK_ISU_NM        (str) : 목적주권_종목명	
+        TARSTK_ISU_PRSNT_PRC (str) : 목적주권_종가	
+    """
+
+    # Parameter Setting
+    query_params = {
+        "AUTH_KEY" : serviceKey, # 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키
+        "basDd"    : basDd,      # 기준일자
+    }
+
+    # Request
+    return request_data_to_api(URL_SW_DAILY_TRADING, query_params)
+
+def get_sr_daily_trading(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
+    """
+    신주인수권증서 일별매매정보 검색 결과를 반환한다.
+    * 신주인수권증서 (http://openapi.krx.co.kr/contents/OPP/USES/service/OPPUSES002_S2.cmd?BO_ID=YieGrzzJtKhbaNLuKmhz)
+        
+    [Parameters]
+    serviceKey (str) : 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키 (Mandatory) 
+    basDd      (str) : 기준일자 (Default: YESTERDAY; 이전 영업일)
+
+    [Returns]
+    item : 신주인수권증서 (list of dict)
+        BAS_DD               (str) : 기준일자 (YYYYMMDD)
+        MKT_NM               (str) : 시장구분	
+        ISU_CD               (str) : 종목코드	
+        ISU_NM               (str) : 종목명	
+        TDD_CLSPRC	         (str) : 종가	
+        CMPPREVDD_PRC        (str) : 대비	
+        FLUC_RT              (str) : 등락률	
+        TDD_OPNPRC           (str) : 시가	
+        TDD_HGPRC            (str) : 고가	
+        TDD_LWPRC            (str) : 저가	
+        ACC_TRDVOL		     (str) : 거래량
+        ACC_TRDVAL	         (str) : 거래대금
+        MKTCAP               (str) : 시가총액
+        LIST_SHRS            (str) : 상장증서수
+        ISU_PRC              (str) : 신주발행가
+        DELIST_DD            (str) : 상장폐지일
+        TARSTK_ISU_SRT_CD    (str) : 목적주권_종목코드
+        TARSTK_ISU_NM        (str) : 목적주권_종목명	
+        TARSTK_ISU_PRSNT_PRC (str) : 목적주권_종가	
+    """
+
+    # Parameter Setting
+    query_params = {
+        "AUTH_KEY" : serviceKey, # 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키
+        "basDd"    : basDd,      # 기준일자
+    }
+
+    # Request
+    return request_data_to_api(URL_SR_DAILY_TRADING, query_params)
+
+def get_kospi_base_info(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
+    """
+    유가증권 종목기본정보 검색 결과를 반환한다.
+    * 유가증권 종목기본정보 (http://openapi.krx.co.kr/contents/OPP/USES/service/OPPUSES002_S2.cmd?BO_ID=PiwgMdTwmsenXhmqqxuj)
+        
+    [Parameters]
+    serviceKey (str) : 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키 (Mandatory) 
+    basDd      (str) : 기준일자 (Default: YESTERDAY; 이전 영업일)
+
+    [Returns]
+    item : 유가증권 종목기본정보 (list of dict)
+        ISU_CD             (str) : 표준코드
+        ISU_SRT_CD         (str) : 단축코드	
+        ISU_NM             (str) : 한글 종목명	
+        ISU_ABBRV	       (str) : 한글 종목약명	
+        ISU_ENG_NM         (str) : 영문 종목명	
+        LIST_DD            (str) : 상장일	
+        MKT_TP_NM          (str) : 시장구분	
+        SECUGRP_NM         (str) : 증권구분	
+        SECT_TP_NM         (str) : 소속부	
+        KIND_STKCERT_TP_NM (str) : 주식종류
+        PARVAL	           (str) : 액면가
+        LIST_SHRS          (str) : 상장주식수
+    """
+
+    # Parameter Setting
+    query_params = {
+        "AUTH_KEY" : serviceKey, # 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키
+        "basDd"    : basDd,      # 기준일자
+    }
+
+    # Request
+    return request_data_to_api(URL_KOSPI_BASE_INFO, query_params)
+
+def get_kosdaq_base_info(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
+    """
+    코스닥 종목기본정보 검색 결과를 반환한다.
+    * 코스닥 종목기본정보 (http://openapi.krx.co.kr/contents/OPP/USES/service/OPPUSES002_S2.cmd?BO_ID=CifLHplnUFMgpHIMMPXs)
+        
+    [Parameters]
+    serviceKey (str) : 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키 (Mandatory) 
+    basDd      (str) : 기준일자 (Default: YESTERDAY; 이전 영업일)
+
+    [Returns]
+    item : 코스닥 종목기본정보 (list of dict)
+        ISU_CD             (str) : 표준코드
+        ISU_SRT_CD         (str) : 단축코드	
+        ISU_NM             (str) : 한글 종목명	
+        ISU_ABBRV	       (str) : 한글 종목약명	
+        ISU_ENG_NM         (str) : 영문 종목명	
+        LIST_DD            (str) : 상장일	
+        MKT_TP_NM          (str) : 시장구분	
+        SECUGRP_NM         (str) : 증권구분	
+        SECT_TP_NM         (str) : 소속부	
+        KIND_STKCERT_TP_NM (str) : 주식종류
+        PARVAL	           (str) : 액면가
+        LIST_SHRS          (str) : 상장주식수
+    """
+
+    # Parameter Setting
+    query_params = {
+        "AUTH_KEY" : serviceKey, # 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키
+        "basDd"    : basDd,      # 기준일자
+    }
+
+    # Request
+    return request_data_to_api(URL_KOSDAQ_BASE_INFO, query_params)
+
+def get_konex_base_info(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
+    """
+    코넥스 종목기본정보 검색 결과를 반환한다.
+    * 코넥스 종목기본정보 (http://openapi.krx.co.kr/contents/OPP/USES/service/OPPUSES002_S2.cmd?BO_ID=COgTLqgmGlqyJvaEFNIc)
+        
+    [Parameters]
+    serviceKey (str) : 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키 (Mandatory) 
+    basDd      (str) : 기준일자 (Default: YESTERDAY; 이전 영업일)
+
+    [Returns]
+    item : 코넥스 종목기본정보 (list of dict)
+        ISU_CD             (str) : 표준코드
+        ISU_SRT_CD         (str) : 단축코드	
+        ISU_NM             (str) : 한글 종목명	
+        ISU_ABBRV	       (str) : 한글 종목약명	
+        ISU_ENG_NM         (str) : 영문 종목명	
+        LIST_DD            (str) : 상장일	
+        MKT_TP_NM          (str) : 시장구분	
+        SECUGRP_NM         (str) : 증권구분	
+        SECT_TP_NM         (str) : 소속부	
+        KIND_STKCERT_TP_NM (str) : 주식종류
+        PARVAL	           (str) : 액면가
+        LIST_SHRS          (str) : 상장주식수
+    """
+
+    # Parameter Setting
+    query_params = {
+        "AUTH_KEY" : serviceKey, # 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키
+        "basDd"    : basDd,      # 기준일자
+    }
+
+    # Request
+    return request_data_to_api(URL_KONEX_BASE_INFO, query_params)
+
+def get_etf_daily_trading(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
+    """
+    ETF 일별매매정보 검색 결과를 반환한다.
+    * ETF 일별매매정보 (http://openapi.krx.co.kr/contents/OPP/USES/service/OPPUSES003_S2.cmd?BO_ID=nrEpCLaZpoLCTzPUMxuF)
+        
+    [Parameters]
+    serviceKey (str) : 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키 (Mandatory) 
+    basDd      (str) : 기준일자 (Default: YESTERDAY; 이전 영업일)
+
+    [Returns]
+    item : ETF 일별매매정보 (list of dict)
+        BAS_DD                   (str) : 기준일자 (YYYYMMDD)
+        ISU_CD                   (str) : 종목코드
+        ISU_NM                   (str) : 종목명
+        TDD_CLSPRC	             (str) : 종가
+        CMPPREVDD_PRC            (str) : 대비
+        FLUC_RT                  (str) : 등락률
+        NAV                      (str) : 순자산가치 (NAV)
+        TDD_OPNPRC               (str) : 시가
+        TDD_HGPRC                (str) : 고가
+        TDD_LWPRC                (str) : 저가
+        ACC_TRDVOL	             (str) : 거래량
+        ACC_TRDVAL               (str) : 거래대금
+        MKTCAP                   (str) : 시가총액
+        INVSTASST_NETASST_TOTAMT (str) : 순자산총액
+        LIST_SHRS                (str) : 상장좌수
+        IDX_IND_NM               (str) : 기초지수_지수명
+        OBJ_STKPRC_IDX           (str) : 기초지수_종가
+        CMPPREVDD_IDX            (str) : 기초지수_대비
+        FLUC_RT_IDX	             (str) : 기초지수_등락률
+    """
+
+    # Parameter Setting
+    query_params = {
+        "AUTH_KEY" : serviceKey, # 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키
+        "basDd"    : basDd,      # 기준일자
+    }
+
+    # Request
+    return request_data_to_api(URL_ETF_DAILY_TRADING, query_params)
+
+def get_etn_daily_trading(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
+    """
+    ETN 일별매매정보 검색 결과를 반환한다.
+    * ETN 일별매매정보 (http://openapi.krx.co.kr/contents/OPP/USES/service/OPPUSES003_S2.cmd?BO_ID=VujebrcOsZQMybnUuwLk)
+        
+    [Parameters]
+    serviceKey (str) : 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키 (Mandatory) 
+    basDd      (str) : 기준일자 (Default: YESTERDAY; 이전 영업일)
+
+    [Returns]
+    item : ETN 일별매매정보 (list of dict)
+        BAS_DD                   (str) : 기준일자 (YYYYMMDD)
+        ISU_CD                   (str) : 종목코드
+        ISU_NM                   (str) : 종목명
+        TDD_CLSPRC	             (str) : 종가
+        CMPPREVDD_PRC            (str) : 대비
+        FLUC_RT                  (str) : 등락률
+        NAV                      (str) : 순자산가치 (NAV)
+        TDD_OPNPRC               (str) : 시가
+        TDD_HGPRC                (str) : 고가
+        TDD_LWPRC                (str) : 저가
+        ACC_TRDVOL	             (str) : 거래량
+        ACC_TRDVAL               (str) : 거래대금
+        MKTCAP                   (str) : 시가총액
+        INVSTASST_NETASST_TOTAMT (str) : 순자산총액
+        LIST_SHRS                (str) : 상장좌수
+        IDX_IND_NM               (str) : 기초지수_지수명
+        OBJ_STKPRC_IDX           (str) : 기초지수_종가
+        CMPPREVDD_IDX            (str) : 기초지수_대비
+        FLUC_RT_IDX	             (str) : 기초지수_등락률
+    """
+
+    # Parameter Setting
+    query_params = {
+        "AUTH_KEY" : serviceKey, # 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키
+        "basDd"    : basDd,      # 기준일자
+    }
+
+    # Request
+    return request_data_to_api(URL_ETN_DAILY_TRADING, query_params)
+
+def get_elw_daily_trading(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
+    """
+    ELW 일별매매정보 검색 결과를 반환한다.
+    * ELW 일별매매정보 (http://openapi.krx.co.kr/contents/OPP/USES/service/OPPUSES003_S2.cmd?BO_ID=brBhSEuDCUNpmfsCslfM)
+        
+    [Parameters]
+    serviceKey (str) : 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키 (Mandatory) 
+    basDd      (str) : 기준일자 (Default: YESTERDAY; 이전 영업일)
+
+    [Returns]
+    item : ELW 일별매매정보 (list of dict)
+        BAS_DD                   (str) : 기준일자 (YYYYMMDD)
+        ISU_CD                   (str) : 종목코드
+        ISU_NM                   (str) : 종목명
+        TDD_CLSPRC	             (str) : 종가
+        CMPPREVDD_PRC            (str) : 대비
+        FLUC_RT                  (str) : 등락률
+        NAV                      (str) : 순자산가치 (NAV)
+        TDD_OPNPRC               (str) : 시가
+        TDD_HGPRC                (str) : 고가
+        TDD_LWPRC                (str) : 저가
+        ACC_TRDVOL	             (str) : 거래량
+        ACC_TRDVAL               (str) : 거래대금
+        MKTCAP                   (str) : 시가총액
+        INVSTASST_NETASST_TOTAMT (str) : 순자산총액
+        LIST_SHRS                (str) : 상장좌수
+        IDX_IND_NM               (str) : 기초지수_지수명
+        OBJ_STKPRC_IDX           (str) : 기초지수_종가
+        CMPPREVDD_IDX            (str) : 기초지수_대비
+        FLUC_RT_IDX	             (str) : 기초지수_등락률
+    """
+
+    # Parameter Setting
+    query_params = {
+        "AUTH_KEY" : serviceKey, # 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키
+        "basDd"    : basDd,      # 기준일자
+    }
+
+    # Request
+    return request_data_to_api(URL_ELW_DAILY_TRADING, query_params)
+
+def get_gov_bond_daily_trading(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
+    """
+    국채전문유통시장 일별매매정보 검색 결과를 반환한다.
+    * 국채전문유통시장 일별매매정보 (http://openapi.krx.co.kr/contents/OPP/USES/service/OPPUSES004_S2.cmd?BO_ID=CEnOyORzHgXWpdbUfWyf)
+        
+    [Parameters]
+    serviceKey (str) : 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키 (Mandatory) 
+    basDd      (str) : 기준일자 (Default: YESTERDAY; 이전 영업일)
+
+    [Returns]
+    item : 국채전문유통시장 일별매매정보 (list of dict)
+        BAS_DD           (str) : 기준일자 (YYYYMMDD)
+        MKT_NM           (str) : 시장구분
+        ISU_CD           (str) : 종목코드
+        ISU_NM	         (str) : 종목명
+        BND_EXP_TP_NM    (str) : 만기년수
+        GOVBND_ISU_TP_NM (str) : 종목구분
+        CLSPRC           (str) : 종가_가격
+        CMPPREVDD_PRC    (str) : 종가_대비
+        CLSPRC_YD        (str) : 종가_수익률
+        OPNPRC           (str) : 시가_가격
+        OPNPRC_YD	     (str) : 시가_수익률
+        HGPRC            (str) : 고가_가격
+        HGPRC_YD         (str) : 고가_수익률
+        LWPRC            (str) : 저가_가격
+        LWPRC_YD         (str) : 저가_수익률	
+        ACC_TRDVOL       (str) : 거래량
+        ACC_TRDVAL       (str) : 거래대금
+    """
+
+    # Parameter Setting
+    query_params = {
+        "AUTH_KEY" : serviceKey, # 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키
+        "basDd"    : basDd,      # 기준일자
+    }
+
+    # Request
+    return request_data_to_api(URL_GOV_BOND_DAILY_TRADING, query_params)
+
+def get_general_bond_daily_trading(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
+    """
+    일반채권시장 일별매매정보 검색 결과를 반환한다.
+    * 일반채권시장 일별매매정보 (http://openapi.krx.co.kr/contents/OPP/USES/service/OPPUSES004_S2.cmd?BO_ID=JfStBNhXISpVVfBHgspT)
+        
+    [Parameters]
+    serviceKey (str) : 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키 (Mandatory) 
+    basDd      (str) : 기준일자 (Default: YESTERDAY; 이전 영업일)
+
+    [Returns]
+    item : 일반채권시장 일별매매정보 (list of dict)
+        BAS_DD           (str) : 기준일자 (YYYYMMDD)
+        MKT_NM           (str) : 시장구분
+        ISU_CD           (str) : 종목코드
+        ISU_NM	         (str) : 종목명
+        CLSPRC           (str) : 종가_가격
+        CMPPREVDD_PRC    (str) : 종가_대비
+        CLSPRC_YD        (str) : 종가_수익률
+        OPNPRC           (str) : 시가_가격
+        OPNPRC_YD	     (str) : 시가_수익률
+        HGPRC            (str) : 고가_가격
+        HGPRC_YD         (str) : 고가_수익률
+        LWPRC            (str) : 저가_가격
+        LWPRC_YD         (str) : 저가_수익률	
+        ACC_TRDVOL       (str) : 거래량
+        ACC_TRDVAL       (str) : 거래대금
+    """
+
+    # Parameter Setting
+    query_params = {
+        "AUTH_KEY" : serviceKey, # 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키
+        "basDd"    : basDd,      # 기준일자
+    }
+
+    # Request
+    return request_data_to_api(URL_GENERAL_BOND_DAILY_TRADING, query_params)
+
+def get_small_bond_daily_trading(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
+    """
+    소액채권시장 일별매매정보 검색 결과를 반환한다.
+    * 소액채권시장 일별매매정보 (http://openapi.krx.co.kr/contents/OPP/USES/service/OPPUSES004_S2.cmd?BO_ID=yrTTOsXuYzHprbWLuYzd)
+        
+    [Parameters]
+    serviceKey (str) : 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키 (Mandatory) 
+    basDd      (str) : 기준일자 (Default: YESTERDAY; 이전 영업일)
+
+    [Returns]
+    item : 소액채권시장 일별매매정보 (list of dict)
+        BAS_DD           (str) : 기준일자 (YYYYMMDD)
+        MKT_NM           (str) : 시장구분
+        ISU_CD           (str) : 종목코드
+        ISU_NM	         (str) : 종목명
+        CLSPRC           (str) : 종가_가격
+        CMPPREVDD_PRC    (str) : 종가_대비
+        CLSPRC_YD        (str) : 종가_수익률
+        OPNPRC           (str) : 시가_가격
+        OPNPRC_YD	     (str) : 시가_수익률
+        HGPRC            (str) : 고가_가격
+        HGPRC_YD         (str) : 고가_수익률
+        LWPRC            (str) : 저가_가격
+        LWPRC_YD         (str) : 저가_수익률	
+        ACC_TRDVOL       (str) : 거래량
+        ACC_TRDVAL       (str) : 거래대금
+    """
+
+    # Parameter Setting
+    query_params = {
+        "AUTH_KEY" : serviceKey, # 한국거래소 정보데이터시스템 Open API에서 인가받은 인증키
+        "basDd"    : basDd,      # 기준일자
+    }
+
+    # Request
+    return request_data_to_api(URL_SMALL_BOND_DAILY_TRADING, query_params)
+
 def get_petroleum_market_daily_trading(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
     """
     석유시장 일별매매정보 검색 결과를 반환한다.
@@ -905,32 +1437,6 @@ def get_financials_kr(serviceKey:str, numOfRow:int=ALL_STOCKS_KR):
 
     return list_financial_data
 
-def test():
-
-    # Configurations for test
-    # serviceKey           ="<your api key>" # 공공데이터포털 서비스키
-    serviceKey="uZEPxYU1hcKy6To5Hex%2ByxoSPBqrjzpFi9DeHCmI3b%2FovyQR3HbAcBQQG1RtKJpp5vRJ7ChiL%2B4HqCwEsXjoJQ%3D%3D"
-    samsung_crno         = "1301110006246" # 삼성전자 법인등록번호
-    samsung_issucoCustno = "593"           # 삼성전자 발행회사번호
-    samsung_shortIsin    = "005930"        # 삼성전자 단축 ISIN 코드
-
-    # result = get_krx_listed_info(serviceKey=serviceKey)
-    # result = get_corp_outline(serviceKey=serviceKey, crno=samsung_crno)
-    # result = get_issuco_basic_info(serviceKey=serviceKey, issucoCustno=samsung_issucoCustno)
-    # result = get_issuco_custno_by_short_isin(serviceKey=serviceKey, shortIsin=samsung_shortIsin)
-    # result = get_stoc_issu_stat(serviceKey=serviceKey, crno=samsung_crno)
-    # result = get_item_basi_info(serviceKey=serviceKey, crno=samsung_crno)    
-    # result = get_summ_fina_stat(serviceKey=serviceKey, type="ALL", crno=samsung_crno)
-
-    result = get_financials_kr(serviceKey=serviceKey, numOfRow=50)
-
-    with open("financials_kr.json", "w", encoding="utf-8") as json_file:
-        json_file.write(str(result)) # Write to json file
-
-
-
-
-# * * *   Functions   * * *
 def get_stock_price_info(serviceKey:str, pageNo=1, numOfRows=1, resultType="json", basDt=PREVIOUS_BUSINESS_DAY, beginBasDt="", endBasDt="", likeBasDt="", likeSrtnCd="", isinCd="", likeIsinCd="", itmsNm="", likeItmsNm="", mrktCls="", beginVs="", endVs="", beginFltRt="", endFltRt="", beginTrqu="", endTrqu="", beginTrPrc="", endTrPrc="", beginLstgStCnt="", endLstgStCnt="", beginMrktTotAmt="", endMrktTotAmt=""):
     """
     금융위원회_주식시세정보: 주식시세 검색 결과를 반환한다.
