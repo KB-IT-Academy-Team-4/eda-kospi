@@ -1,6 +1,9 @@
 # EDA: KOSPI<br/>
 월간 데이콘 KOSPI 기반 분석 시각화 경진대회 출품작<br/>
 <br/>
+[Dependencies]<br/>
+Python 3.10<br/>
+<br/>
 <br/>
 [Role]<br/>
 <br/>
