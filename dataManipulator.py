@@ -4,6 +4,11 @@
 # Author  : Byeong Heon Lee
 # Contact : lww7438@gmail.com
 
+# Required Modules
+import requests
+import json                        # JSON Parser
+import xml.etree.ElementTree as ET # XML Parser      
+
 
 
 # * * *   Functions   * * *
@@ -45,3 +50,20 @@ def left_join_by_key(ldata:list, rdata:list, key:str):
                     item[k] = v
 
     return merged_list
+
+def request_data_to_api(serviceUrl:str, queryParams:dict):
+    response = requests.get(set_query_url(service_url=serviceUrl, params=queryParams))
+
+    # Parsing
+    try:
+        items = json.loads(response.text)['OutBlock_1']
+    except:
+        return None
+
+    # Assertion & Logging
+    if len(items) > 0:
+        print(f"Success: {serviceUrl[4:]}")
+        return items
+    else:
+        print(f"Fail: {serviceUrl[4:]}")
+        return None

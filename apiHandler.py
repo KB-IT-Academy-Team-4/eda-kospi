@@ -9,46 +9,38 @@
 
 
 # Required Modules
-import yfinance              as yf
-import pykrx                 as pk
-import FinanceDataReader     as fdr
-import requests
-import json                        # JSON Parser
-import xml.etree.ElementTree as ET # XML Parser                     
+# import yfinance              as yf
+# import pykrx                 as pk
+# import FinanceDataReader     as fdr
+import pandas_datareader     as pdr
 import pandas                as pd
 import time
 import sys
 
-from apiConfig      import *
-from dataManager    import *
+from apiConfig       import *
+from dataManipulator import *
 
 
 
 # * * *   Functions   * * *
-def request_data_to_api(serviceUrl:str, queryParams:dict):
-    response = requests.get(set_query_url(service_url=serviceUrl, params=queryParams))
 
-    # Parsing
-    try:
-        items = json.loads(response.text)['OutBlock_1']
-    except:
-        return None
-
-    # Assertion & Logging
-    if len(items) > 0:
-        print(f"Success: {serviceUrl[4:]}")
-        return items
-    else:
-        print(f"Fail: {serviceUrl[4:]}")
-        return None
-
-def get_world_index(idxNm:str, startDt:str, endDt:str):
+def get_world_index(indexNm:str=None, startDt:str="20000101", endDt:str=YESTERDAY):
     
-    if idxNm not in WORLD_INDEX_TICKERS:
-        print(f"Fail: Invalid index name {idxNm}")
-        return None
+    # Search Single Index
+    if indexNm is not None:
+        if indexNm not in WORLD_INDEX_TICKERS:
+            print(f"Fail: Invalid index name {indexNm}")
+            return None
+        else:
+            return pdr.DataReader(indexNm, 'yahoo', startDt, endDt)
+    # Search World Indices
+    else:
+        indices = list()
+        for index_info in WORLD_INDEX_TICKERS:
+            item_indices = list(index_info, pdr.DataReader(index_info['ticker'], 'yahoo', datetime(2000,1,1), datetime(2022,9,25)))
+            indices.append(item_indices)
 
-    return fdr.DataReader(idxNm, startDt, endDt)
+    return indices
 
 def get_krx_series_daily_price(serviceKey:str, basDd:str=PREVIOUS_BUSINESS_DAY):
     """
