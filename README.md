@@ -1,7 +1,7 @@
 # Exploratory Data Analysis for KOSPI  
 코스피 지수에 대한 탐색적 데이터 분석  
 <br />
-([월간 데이콘 KOSPI 기반 분석 시각화 경진대회](https://dacon.io/competitions/official/235980/overview/description) 출품작)
+([월간 데이콘 KOSPI 기반 분석 시각화 경진대회](https://dacon.io/competitions/official/235980/codeshare/6770) 출품작)
 <br />
 <br />
 <br />
